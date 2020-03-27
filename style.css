@@ -1,16 +1,8 @@
-title {
-    color: black;
-}
-
 .svg {
     display: flex;
     margin: 10vh auto;
     background-color: white;
 }
-
-body {
-    background-color: pink;
-  }
 
 #title {
     text-align: center;
@@ -20,6 +12,10 @@ body {
 
 .dot {
     stroke: black;
+}
+.dot:hover {
+    stroke-width: 2;
+    
 }
 
 div#tooltip {

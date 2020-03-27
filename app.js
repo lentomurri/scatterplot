@@ -42,7 +42,6 @@ function loadJSON(path, success, error) { //generic function to get JSON
     //create scales for axes and data
     var current = d3.timeFormat("%M:%S");
     var year = d3.timeFormat("%Y");
-    var colors = ["blue", "orange"];
 
     //xScale based on years from min to max taken from data
     const times = dataset.map(function(d) {
@@ -120,13 +119,13 @@ function loadJSON(path, success, error) { //generic function to get JSON
     .on("mouseover", function(d,i) {
       tooltip.style("visibility", "visible")
       .style("top", yScale(times[i]) + "px")
-      .style("left", xScale(years[i])+ 200 + "px")
+      .style("left", xScale(years[i])+ 400 + "px")
       .attr("data-year", d.Year)
-      .html(d.Name + " (" + d.Year + ")" + " Time: " + d.Time +  "<br>Accusation: <br>" + d.Doping)
+      .html(d.Name + " (" + d.Year + ")" + "<br>Time: " + d.Time + "<br>" + d.Doping);
     })
     .on("mouseout", function(d) {
-      tooltip.style("visibility", "hidden")
-    })
+      tooltip.style("visibility", "hidden");
+    });
   
     //create legend
 
